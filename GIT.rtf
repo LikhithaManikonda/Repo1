@@ -1,0 +1,148 @@
+
+                                               GIT
+===================================================
+	GIT-is a Distributed Version Control Systems.
+	
+===>	   Version Control Systems(VCS)--to track changes in files/folders
+Types:2
+1.Central Version Control System (SVN)
+2. Distributed  Version Control System (GIT)
+
+-->In central vcs all the source code will be stored in external repository(server),if we donot have an 
+internet connection then we cannot access data in the external repository. Only checkout data will be available
+in local repo.
+-->Whereas in distributed vcs 	local copy of external repository is maintained in each and every local repositories.
+	So that we(developers) can access even if there is no internet connection or if any crash occurs.
+
+===>GIT HUB:
+    ========
+	Git Hub is a website to upload your repositories online.
+	Provides Backup.
+	Provides visual interface to your repo.
+	Makes Collaboration easier.
+	
+==> IS GIT AND GIT HUB ARE SAME???
+    NO
+	We can use GIT with any of the website which provides option of uploading repositories like BitBucket etc
+	We can us GITHUB with any of the version control systems.
+	
+==>WORK FLOW OF GIT
+  ====================
+  
+ 
+
+Step1:
+======
+ To Check if git is already installed.
+  On Terminal - git --version
+Step 2 :
+=======
+ Download and install git
+  https://git-scm.com/download/mac
+
+Step 3 :
+=======
+ Signup and create a account on GitHub
+  https://github.com/
+Create an account :
+-----------------------------
+Username:LikhithaManikonda
+EmailId: likhithamanikonda6@gmail.com
+Step 4 : 
+=======
+Add your github email and username to git (On gitbash terminal)
+----  git config --global user.email "yourGitHub@email.com"
+Ex: git config --global user.email " likhithamanikonda6@gmail.com"
+
+---- git config --global user.name "yourGitHubusername"
+Ex: git config --global user.name "LikhithaManikonda"
+
+Step 5 : Add file/folders to git - tracking
+Create a folder for ex named GitFolder on Desktop
+Step 6 : Commands
+ADDING FILES TO GIT REPOSITORY
+=================================
+   ---> On terminal - goto the location of the folder/project(GitFolder)
+use the command: cd Desktop
+                                cd GitFolder
+   ----> git init -- this command it used to creates an empty GIT REPOSITORY
+with .git extension(this can be seem by using ls -al command on terminal)
+   -----> git status -- initially it says :  
+On branch master                                                                                
+Initial commit                                                                                        
+nothing to commit (create/copy files and use "git add" to track) 
+// as there are no files added to GitFolder                                        
+----> To add a file into the folder use the command 
+touch GIT.rtf
+Now if we see the 
+A-8276@EXP7561 MINGW32 ~/Desktop/GitFolder (master)
+$ git status
+On branch master                                                
+Initial commit                                                  
+Untracked files:                                                
+  (use "git add <file>..." to include in what will be committed)
+        GIT.rtf                                                 
+nothing added to commit but untracked files present (use "git    add" to track)                                                  
+
+//From now whatever the files are added after creating empty git repo using(git init) will be tracked by git.So above the file is added by not tracked (that is why it is show in red color GIT.rtf)hence for tracking the untracked files we use the command
+   - git add 
+(git add *.txt -- adds all txt files
+git add *.* -- adds any type of files
+git add .-- adds all files in the folder)
+A-8276@EXP7561 MINGW32 ~/Desktop/GitFolder (master)
+$ git add GIT.rtf  (GIT.rtf is case sensitive)
+now check the git status
+A-8276@EXP7561 MINGW32 ~/Desktop/GitFolder (master)
+$ git status
+On branch master
+Initial commit
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   GIT.rtf
+//Now it will be in gree color that means it is tracked
+Next we need to do commit
+   - git commit -m “…..”
+                -m is you can give any readable message for commit.
+
+A-8276@EXP7561 MINGW32 ~/Desktop/GitFolder (master)
+$ git commit -m "added GIT.rtf succesfully"
+[master (root-commit) a16da81] added GIT.rtf succesfully
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 GIT.rtf
+//after that check it with git status
+
+A-8276@EXP7561 MINGW32 ~/Desktop/GitFolder (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+ADDING FILES TO REMOTE REPOSITORY (GIT HUB)
+==============================================
+Create a new repository in GIT HUB by pressing '+'
+Give the name to the repository for ex(repo1)
+ 
+ Copy the link that is highlighted and paste on the terminal for the command below in place of location of remote repo.
+- git remote add origin “location of remote repo”
+A-8276@EXP7561 MINGW32 ~/Desktop/GitFolder (master)
+$ git remote add origin https://github.com/LikhithaManikonda/Repo1.git
+ 
+Nothing will be shown in GIT HUB as nothing is pushed as of now to the remote repo. To push follow the below command.
+  - git push -u origin master
+
+A-8276@EXP7561 MINGW32 ~/Desktop/GitFolder (master)
+$ git push -u origin master
+Fatal: HttpRequestException encountered.
+Username for 'https://github.com': LikhithaManikonda
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 231 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/LikhithaManikonda/Repo1.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
+//In the mean while it will ask for github credentials
+then refresh github page it appears as follows
+ 
+
+   - git log
+   - git --help
+	
